@@ -1,219 +1,390 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Samuele Ronca | Copywriter e content creator</title>
-<meta name="description" content="Portfolio di Samuele Ronca, copywriter e content creator freelance.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-<style>
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.05rem;line-height:1.65}
-a{color:var(--link)}a:focus-visible{outline:3px solid var(--link);outline-offset:3px}
-.wrap{max-width:980px;margin:0 auto;padding:0 1.5rem}
-.hero{padding:4.5rem 0 0}
-.hero h1{font-family:var(--display);font-size:clamp(3rem,10.5vw,7rem);line-height:.98;margin:0 0 1rem}
-.role{font-family:var(--display);font-size:clamp(1.15rem,3vw,1.5rem);color:var(--muted);margin:0 0 1.5rem}
-.intro{max-width:36rem;margin:0}
-.wave{display:block;width:100%;height:60px;margin-top:3rem}
-.wave path{fill:none;stroke:var(--wave);stroke-width:4;stroke-linecap:round}
-nav{position:sticky;top:0;z-index:5;padding:1rem 0;font-family:var(--display);backdrop-filter:blur(8px);background:var(--navbg);border-bottom:1px solid var(--band-line)}
-nav .wrap{display:flex;gap:1.5rem;flex-wrap:wrap}nav a{color:var(--ink);text-decoration:none}nav a:hover{color:var(--link)}
-section{padding:3.5rem 0}
-.grid{display:grid;grid-template-columns:200px 1fr;gap:1rem 3rem}
-@media(max-width:720px){.grid{grid-template-columns:1fr}}
-.grid>h2{font-family:var(--display);margin:0;font-size:1.35rem;line-height:1.2}
-.item{padding:1.25rem 1.4rem;margin-bottom:1.1rem}
-.item h3{font-family:var(--display);font-size:1.2rem;margin:0 0 .15rem;line-height:1.3}
-.when{font-family:var(--display);font-size:.92rem;color:var(--muted);margin:0 0 .5rem}
-.item p{margin:0 0 .6rem;max-width:38rem}
-.links{list-style:none;padding:0;margin:.8rem 0 0;display:flex;flex-wrap:wrap;gap:.6rem}
-.links a{display:inline-block;font-family:var(--display);font-weight:700;font-size:.95rem;line-height:1.2;text-decoration:none;padding:.65rem 1.1rem}
-.facts{list-style:none;margin:0;padding:0}.facts li{padding:.6rem 0;border-bottom:1px solid var(--band-line)}.facts li:last-child{border:0}
-.contact p{margin:0 0 .6rem}
-.reach{display:flex;flex-wrap:wrap;gap:.3rem 1.25rem;font-size:.85rem}
-.in{display:inline-flex;width:44px;height:44px;align-items:center;justify-content:center;color:var(--ink)}
-.in svg{width:26px;height:26px;fill:currentColor}.in:hover{color:var(--link)}
-footer{padding:2rem 0 3rem;color:var(--muted);font-size:.9rem}
-
-:root{--paper:#FFFAF2;--ink:#2A1E3A;--muted:#6B5A7E;--link:#B8460F;--navbg:rgba(255,250,242,.86);--band-line:rgba(42,30,58,.2);--display:"Outfit","Helvetica Neue",Arial,sans-serif;--body:"Lora",Georgia,serif}
-body{background:radial-gradient(50rem 32rem at 15% -8%,rgba(249,208,87,.5),transparent 62%),radial-gradient(46rem 30rem at 90% 8%,rgba(201,126,224,.4),transparent 62%),radial-gradient(40rem 26rem at 60% 100%,rgba(255,140,75,.28),transparent 62%),#FFFAF2;background-attachment:fixed}
-.hero .wrap,nav .wrap{text-align:center;justify-content:center}
-.intro{margin:0 auto}
-.hero h1{font-weight:800;letter-spacing:-.045em}
-.grid{grid-template-columns:1fr;gap:1.5rem}
-.grid>h2{font-size:2rem;font-weight:800}
-#esperienza .grid>div,#lavori .grid>div{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
-@media(max-width:720px){#esperienza .grid>div,#lavori .grid>div{grid-template-columns:1fr}}
-#esperienza .item:last-child{grid-column:1/-1}
-.item{margin:0;padding:1.5rem;border-radius:28px}
-.item:nth-child(3n+1){background:#FFE3D0}.item:nth-child(3n+2){background:#FFF1BF}.item:nth-child(3n){background:#F4DCFA}
-.item p{font-size:1rem}
-.band .facts{background:#F4DCFA;border-radius:28px;padding:.8rem 1.5rem}
-.hero{padding:4.5rem 0 3.5rem}
-.links a{background:linear-gradient(90deg,#FF8C4B,#F9D057);color:#2A1E3A;border-radius:999px;box-shadow:0 8px 18px -8px rgba(255,140,75,.9);transition:transform .15s,box-shadow .15s}
-.links a:hover{transform:translateY(-2px);box-shadow:0 12px 22px -8px rgba(255,140,75,1)}
-.item:nth-child(3n+1) .links a{background:#FF8C4B;box-shadow:0 8px 16px -8px rgba(255,140,75,.95)}
-.item:nth-child(3n+2) .links a{background:#F9D057;box-shadow:0 8px 16px -8px rgba(214,170,20,.9)}
-.item:nth-child(3n) .links a{background:#C97EE0;box-shadow:0 8px 16px -8px rgba(160,80,190,.85)}
-.item:nth-child(n) .links a:hover{background:#2A1E3A;color:#FFFAF2}
-
-/* ---- animazioni ---- */
-@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
-.hero h1{animation:rise .9s cubic-bezier(.2,.7,.2,1) .05s both}
-.role{animation:rise .9s cubic-bezier(.2,.7,.2,1) .25s both}
-.intro{animation:rise .9s cubic-bezier(.2,.7,.2,1) .45s both}
-.js .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1),box-shadow .3s;transition-delay:var(--d,0s)}
-.js .reveal.vis{opacity:1;transform:none}
-.js .item>*{opacity:0}
-.js .item.vis>*{animation:rise .65s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--d,0s) + .12s + var(--i,0) * .09s)}
-.item>*:nth-child(1){--i:0}.item>*:nth-child(2){--i:1}.item>*:nth-child(3){--i:2}.item>*:nth-child(4){--i:3}.item>*:nth-child(5){--i:4}
-.js .item.vis:hover{transform:translateY(-4px);box-shadow:0 20px 32px -20px rgba(42,30,58,.4);transition-delay:0s}
-@media (prefers-reduced-motion:reduce){
-  .hero h1,.role,.intro{animation:none}
-  .js .reveal,.js .item>*{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}
-}
-</style>
-<script>document.documentElement.classList.add("js")</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fffaf2">
+  <meta name="description" content="Portfolio di Samuele Ronca: content strategy, copywriting, social media e progetti digitali per brand e professionisti.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Samuele Ronca | Digital Communication & Content">
+  <meta property="og:description" content="Strategia, parole e contenuti. Scopri i progetti di Samuele Ronca per LinkedIn, Instagram e video.">
+  <meta property="og:url" content="https://samrnc.github.io/Samuele-Ronca-Portfolio/">
+  <link rel="canonical" href="https://samrnc.github.io/Samuele-Ronca-Portfolio/">
+  <title>Samuele Ronca | Digital Communication & Content</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --paper:#fffbf4;--ink:#2a1e3a;--muted:#625271;--orange:#f5844e;
+      --orange-dark:#a43b19;--yellow:#f9d057;--lilac:#dca5e8;--line:rgba(42,30,58,.14);
+      --white:#fffdf9;--display:"Outfit",Arial,sans-serif;--body:"Lora",Georgia,serif;
+      --radius:28px;--shadow:0 14px 40px -30px rgba(42,30,58,.35);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:88px}
+    body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.65 var(--body);
+      background-image:radial-gradient(36rem 28rem at -5% -3%,rgba(249,208,87,.30),transparent 65%),radial-gradient(32rem 30rem at 102% 6%,rgba(201,126,224,.22),transparent 60%)}
+    a{color:var(--orange-dark)}a:hover{color:var(--ink)}
+    :focus-visible{outline:3px solid var(--orange-dark);outline-offset:4px}
+    .skip{position:absolute;z-index:100;top:-80px;left:16px;background:var(--ink);color:white;padding:.7rem 1rem;border-radius:12px}
+    .skip:focus{top:12px}
+    .wrap{width:min(1110px,calc(100% - 48px));margin-inline:auto}
+    .eyebrow,.nav,button,.btn,.pill,.meta,.small-title,.project-index,.caption,.when,.key,.footer-top,
+    .facts-list dt{font-family:var(--display)}
+    .eyebrow{display:inline-flex;align-items:center;gap:.55rem;text-transform:uppercase;font-size:.77rem;font-weight:800;letter-spacing:.12em}
+    .eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--orange)}
+    h1,h2,h3,h4{font-family:var(--display);line-height:1.12;letter-spacing:-.035em}
+    p{margin:.5rem 0 1rem}
+    .hero{padding:80px 0 68px;overflow:hidden;position:relative}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(250px,.8fr);align-items:center;gap:55px}
+    h1{font-size:clamp(3.7rem,8.2vw,6.5rem);margin:15px 0 14px;font-weight:800;letter-spacing:-.065em}
+    .role{font:700 clamp(1.35rem,2.9vw,1.95rem)/1.26 var(--display);margin:0 0 20px;max-width:650px}
+    .hero-copy{max-width:615px;font-size:1.06rem;color:#41384b;margin:0}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+    .btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;line-height:1.3;transition:transform .2s,background .2s,box-shadow .2s}
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:var(--ink);color:white;box-shadow:var(--shadow)}
+    .btn-primary:hover{background:#45305e;color:white}
+    .btn-outline{border:1.5px solid var(--ink);color:var(--ink);background:transparent}
+    .btn-outline:hover{background:#fff0e3}
+    .hero-art{position:relative;min-height:350px;isolation:isolate;display:grid;place-items:center}
+    .hero-art::before{content:"";position:absolute;inset:11% 2% 1% 12%;background:var(--yellow);border-radius:45% 55% 63% 37%/51% 47% 53% 49%;transform:rotate(-11deg);z-index:-2}
+    .hero-art::after{content:"";position:absolute;inset:0 16% 7% 1%;background:var(--lilac);border-radius:56% 44% 40% 60%/45% 53% 47% 55%;transform:rotate(16deg);z-index:-3}
+    .visual-sheet{width:min(88%,330px);min-height:270px;border:2px solid var(--ink);box-shadow:15px 18px 0 #f5844e;border-radius:24px;background:var(--white);padding:25px;transform:rotate(-5deg);display:flex;flex-direction:column;justify-content:space-between}
+    .visual-sheet .asterisk{font:800 3rem/1 var(--display);color:var(--orange-dark)}
+    .visual-sheet strong{font:800 clamp(2rem,3.4vw,2.8rem)/1.02 var(--display);letter-spacing:-.055em}
+    .visual-sheet small{font:600 .8rem var(--display);text-transform:uppercase;letter-spacing:.1em}
+    .micro-star{position:absolute;top:8%;right:10%;font-size:3rem;color:var(--orange-dark)}
+    .proof{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
+    .pill{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);background:rgba(255,255,255,.65);border-radius:999px;padding:8px 13px;font-size:.82rem;font-weight:600}
+    .nav{position:sticky;top:0;z-index:20;background:rgba(255,251,244,.94);backdrop-filter:blur(14px);border-block:1px solid var(--line);font-size:.87rem;font-weight:700}
+    .nav-inner{min-height:59px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .brand{font-weight:800;font-size:1.12rem;text-decoration:none;color:var(--ink);letter-spacing:-.06em}
+    .nav-list{list-style:none;display:flex;align-items:center;flex-wrap:wrap;gap:clamp(12px,2.5vw,30px);padding:0;margin:0}
+    .nav-list a{text-decoration:none;color:var(--ink);white-space:nowrap}
+    .nav-list a:hover{color:var(--orange-dark)}
+    section{padding:73px 0}section[id]{scroll-margin-top:69px}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:22px;margin-bottom:29px}
+    .section-head h2{font-size:clamp(2rem,4.4vw,3.25rem);margin:8px 0 0}
+    .section-note{max-width:395px;color:var(--muted);font-size:.94rem;margin:0}
+    .project-list{display:grid;gap:22px}
+    .project{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;display:grid;grid-template-columns:minmax(0,.94fr) minmax(0,1fr)}
+    .project:nth-child(even){grid-template-columns:minmax(0,1fr) minmax(0,.94fr)}
+    .project:nth-child(even) .project-preview{order:2}
+    .project-preview{min-height:340px;padding:30px;display:flex;align-items:stretch;justify-content:center;position:relative;overflow:hidden}
+    .preview-orange{background:linear-gradient(135deg,#f5b797,#ffdfb7)}
+    .preview-lilac{background:linear-gradient(145deg,#ddc3f3,#f1d7fa)}
+    .preview-yellow{background:linear-gradient(145deg,#fae49b,#f9bd87)}
+    .preview-orange:before,.preview-lilac:before,.preview-yellow:before{content:"";position:absolute;width:280px;height:280px;border:2px solid rgba(42,30,58,.11);border-radius:50%;top:-130px;right:-100px}
+    .preview-orange:after,.preview-lilac:after,.preview-yellow:after{content:"";position:absolute;width:220px;height:220px;border:2px solid rgba(42,30,58,.11);border-radius:50%;bottom:-125px;left:-75px}
+    .preview-card{position:relative;z-index:1;border-radius:20px;background:#fffdfa;box-shadow:0 18px 45px -26px rgba(42,30,58,.35);border:1px solid rgba(42,30,58,.12);width:100%;max-width:385px;padding:22px 23px;display:flex;flex-direction:column;gap:14px;transform:rotate(-2deg)}
+    .preview-label{font:800 .67rem/1.3 var(--display);letter-spacing:.13em;text-transform:uppercase;color:var(--orange-dark)}
+    .preview-card strong{font:800 clamp(1.65rem,2.7vw,2.45rem)/1.07 var(--display);letter-spacing:-.055em}
+    .preview-card .preview-text{font-size:.91rem;line-height:1.5;margin:0}
+    .preview-foot{display:flex;gap:8px;align-items:center;border-top:1px solid var(--line);padding-top:13px;margin-top:auto}
+    .preview-dot{display:inline-block;width:25px;height:25px;background:var(--ink);border-radius:50%}
+    .preview-foot span:last-child{font:700 .78rem var(--display);color:var(--muted)}
+    .preview-mini{background:#fffdfa;border:1px solid rgba(42,30,58,.14);border-radius:13px;padding:13px 14px;font:700 .83rem var(--display)}
+    .preview-stack{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:auto}
+    .preview-stack .preview-mini{min-height:102px;display:flex;align-items:end}
+    .preview-stack .preview-mini:first-child{background:#ffd9c0}.preview-stack .preview-mini:last-child{background:#eacbf4}
+    .project-body{padding:clamp(24px,3.7vw,42px);display:flex;flex-direction:column;justify-content:center}
+    .project-index{font-size:.74rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--orange-dark);margin-bottom:9px}
+    .project h3{font-size:clamp(1.55rem,2.7vw,2.3rem);margin:0 0 8px}
+    .meta{font-size:.85rem;font-weight:600;color:var(--muted);margin:0 0 13px}
+    .project-body > p:not(.meta){margin:0 0 18px;line-height:1.57}
+    .details{display:grid;gap:10px;margin:0 0 19px}
+    .details div{padding-top:11px;border-top:1px solid var(--line)}
+    .details dt{font:800 .7rem/1.5 var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+    .details dd{margin:4px 0 0;font-size:.94rem;line-height:1.55}
+    .tag-row{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 19px}
+    .tag{font:700 .76rem/1.2 var(--display);background:#f4eef4;border:1px solid #e7dce7;border-radius:9px;padding:7px 10px}
+    .action-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto}
+    .text-link{font:700 .92rem/1.4 var(--display);text-decoration:none;color:var(--orange-dark);border-bottom:2px solid currentColor;padding:4px 0}
+    .text-link:hover{color:var(--ink)}
+    .project-footnote{font-size:.79rem;color:var(--muted);margin:15px 0 0}
+    .more-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+    .more-card{background:#ffe3d0;border-radius:var(--radius);padding:28px;min-height:270px;display:flex;flex-direction:column;gap:6px}
+    .more-card:nth-child(2){background:#f2ddf9}
+    .more-card h3{font-size:1.6rem;margin:8px 0 0}
+    .more-card p{margin:4px 0 15px}
+    .more-card .action-row{align-items:end}
+    .band{background:linear-gradient(135deg,#f5e5f8,#fff0d5);border-block:1px solid var(--line)}
+    .experience-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .experience-card{background:rgba(255,255,255,.77);border:1px solid var(--line);border-radius:24px;padding:25px}
+    .experience-card h3{font-size:1.37rem;margin:10px 0 8px}
+    .when{font-size:.84rem;font-weight:700;color:var(--muted);margin:0}
+    .experience-card p{font-size:.93rem;margin:12px 0 0}
+    .experience-card a{font:700 .85rem var(--display)}
+    .skill-layout{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+    .info-panel{padding:28px;border:1px solid var(--line);border-radius:var(--radius);background:rgba(255,255,255,.85)}
+    .info-panel h3{font-size:1.4rem;margin:0 0 14px}
+    .facts-list{margin:0;display:grid;gap:13px}
+    .facts-list div{padding-bottom:12px;border-bottom:1px solid var(--line)}.facts-list div:last-child{border:0;padding:0}
+    .facts-list dt{font-size:.77rem;font-weight:800;text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
+    .facts-list dd{margin:4px 0 0;font-size:.92rem}
+    .skills{display:flex;gap:8px;flex-wrap:wrap}
+    .skills .tag{background:#fff0d9}
+    .contact-band{background:var(--ink);color:white;border-radius:36px;padding:clamp(30px,6vw,70px);display:grid;grid-template-columns:1.1fr 1fr;gap:34px;align-items:center}
+    .contact-band .eyebrow{color:#f9d057}
+    .contact-band h2{font-size:clamp(2rem,4vw,3.3rem);margin:8px 0 14px}
+    .contact-band p{color:#e9e0ee;max-width:480px}
+    .contact-list{display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+    .contact-list a{color:white;font:600 clamp(.95rem,1.7vw,1.1rem)/1.4 var(--display);word-break:break-word;text-decoration-thickness:1px;text-underline-offset:4px}
+    .contact-list a:hover{color:var(--yellow)}
+    .footer-top{display:flex;justify-content:space-between;gap:20px;align-items:center;padding:26px 0 38px;color:var(--muted);font-size:.84rem}
+    .footer-top a{font-weight:700}
+    @media(max-width:930px){.hero-grid{gap:22px}.hero-art{min-height:310px}.project-preview{min-height:310px}.project-body{padding:25px}}
+    @media(max-width:750px){
+      .hero{padding:59px 0 46px}.hero-grid{grid-template-columns:1fr}.hero-art{display:none}
+      .nav-inner{justify-content:center}.brand{display:none}.nav-list{gap:18px}
+      section{padding:52px 0}.section-head{align-items:start;flex-direction:column;gap:9px}
+      .project,.project:nth-child(even){grid-template-columns:1fr}.project:nth-child(even) .project-preview{order:0}
+      .project-preview{min-height:265px;padding:20px}.project-body{padding:27px}
+      .experience-grid{grid-template-columns:1fr}.more-grid{grid-template-columns:1fr}.skill-layout{grid-template-columns:1fr}
+      .contact-band{grid-template-columns:1fr;gap:20px}
+    }
+    @media(max-width:440px){
+      .wrap{width:min(100% - 30px,1110px)}h1{font-size:3.6rem}
+      .nav{font-size:.75rem}.nav-list{gap:12px}.nav-inner{min-height:52px}
+      .pill{font-size:.75rem}.project-preview{min-height:244px;padding:17px}
+      .preview-card{padding:17px}.preview-card strong{font-size:1.65rem}.preview-stack .preview-mini{min-height:74px}
+      .project-body{padding:22px}.action-row{gap:12px}.contact-band{border-radius:25px}
+      .footer-top{align-items:start;flex-direction:column;gap:4px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+  </style>
 </head>
 <body>
-
-<header class="hero">
-  <div class="wrap">
-    <h1>Samuele Ronca</h1>
-    <p class="role">Copywriter e content creator</p>
-    <p class="intro">Scrivo e produco contenuti per brand e professionisti. Sono laureato in Comunicazione, Media e Pubblicità all'Università IULM e lavoro come freelance. Unisco creatività, competenze digitali e visione strategica, con la curiosità di chi segue da vicino l'evoluzione della comunicazione.</p>
-    </div>
-</header>
-
-<nav aria-label="Navigazione principale">
-  <div class="wrap">
-    <a href="#esperienza">Esperienza</a>
-    <a href="#lavori">Lavori</a>
-    <a href="#formazione">Formazione</a>
-    <a href="#contatti">Contatti</a>
-  </div>
-</nav>
-
-<section id="esperienza">
-  <div class="wrap grid">
-    <h2>Esperienza</h2>
-    <div>
-      <div class="item">
-        <h3>FLUSSO Agenzia, freelance</h3>
-        <p class="when">Dal 2025</p>
-        <p>Mi occupo di copywriting, piano editoriale e video editing, seguendo ogni fase del processo creativo.</p>
-        <ul class="links">
-          <li><a target="_blank" rel="noopener noreferrer" href="https://flussoagenzia.github.io/FLUSSO/">Sito di FLUSSO</a></li>
-        </ul>
+  <a class="skip" href="#contenuto">Vai ai contenuti</a>
+  <header class="hero" id="inizio">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Portfolio / Comunicazione digitale</span>
+        <h1>Samuele<br>Ronca<span aria-hidden="true" style="color:var(--orange-dark)">.</span></h1>
+        <p class="role">Digital Communication &amp; Content Specialist</p>
+        <p class="hero-copy">Aiuto brand e professionisti a raccontarsi con contenuti chiari, riconoscibili e pensati per le persone a cui si rivolgono. Mi occupo di copywriting, strategie editoriali, social media e progetti digitali, unendo creatività, organizzazione e attenzione ai risultati.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#progetti">Scopri i progetti <span aria-hidden="true">↗</span></a>
+          <a class="btn btn-outline" href="#contatti">Contattami</a>
+        </div>
+        <div class="proof" aria-label="Esperienza in sintesi">
+          <span class="pill">≈ 40 clienti nel portfolio gestito</span>
+          <span class="pill">B2B e B2C</span>
+          <span class="pill">Copy · Social · Video</span>
+        </div>
       </div>
-      <div class="item">
-        <h3>Execus S.p.A., copywriter e content creator</h3>
-        <p class="when">2022 – 2025</p>
-        <p>Tre anni di produzione di contenuti digitali, dove ho costruito la mia esperienza professionale.</p>
-      </div>
-      <div class="item">
-        <h3>VDC Entertainment, videomaker e direttore creativo</h3>
-        <p class="when">Associazione no profit co-fondata da me</p>
-        <p>Riprese, montaggio e concept visivi per le produzioni multimediali dei nostri eventi culturali. Qui è iniziato il mio percorso.</p>
+      <div class="hero-art" aria-hidden="true">
+        <span class="micro-star">✳</span>
+        <div class="visual-sheet"><span class="asterisk">✳</span><strong>Idee,<br>parole,<br>progetti.</strong><small>Dal brief al contenuto.</small></div>
       </div>
     </div>
-  </div>
-</section>
+  </header>
 
-<section id="lavori">
-  <div class="wrap grid">
-    <h2>Lavori</h2>
-    <div>
-      <div class="item">
-        <h3>Social media per i clienti di FLUSSO</h3>
-        <p>Copy, piano editoriale e video per le pagine Instagram dei clienti dell'agenzia.</p>
-        <ul class="links">
-          <li><a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/stadiumfit.it/">Stadium Fit</a></li>
-          <li><a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/caonarmandosport/">Caon Armando Sport</a></li>
-        </ul>
-      </div>
-      <div class="item">
-        <h3>LinkedIn: strategia editoriale e personal branding</h3>
-        <p>Strategie editoriali che valorizzano brand e professionisti, con testi e grafiche pensati per LinkedIn.</p>
-        <ul class="links">
-          <li><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/posts/comark-italia_comark-innovazione-sostenibilitaeq-activity-7090258736363020290-7Vzj/">Contenuti per un brand</a></li>
-          <li><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/posts/andrea-bianchi-isped_logisticafieristica-fiere-assistenzaclienti-activity-7305512989053374468-B3gn">Personal branding 1</a></li>
-          <li><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/posts/andrea-bianchi-isped_logisticafieristica-beautyworld-istanbul-activity-7310586398602854415-2MUM">Personal branding 2</a></li>
-        </ul>
-      </div>
-      <div class="item">
-        <h3>Podcast</h3>
-        <p class="when">Da gennaio 2026</p>
-        <p>Ho aperto un podcast con uno dei miei più cari amici. Curo tutte le grafiche e il montaggio di episodi, clip e reel per Instagram, TikTok e YouTube.</p>
-        <ul class="links">
-          <li><a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/nando_prjct">Instagram</a></li>
-          <li><a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@Nan2do">YouTube</a></li>
-          <li><a target="_blank" rel="noopener noreferrer" href="https://www.tiktok.com/@nandoprjct">TikTok</a></li>
-          <li><a target="_blank" rel="noopener noreferrer" href="https://open.spotify.com/show/08qRjAbH0zU6c7P1O93Wxm">Spotify</a></li>
-        </ul>
-      </div>
-      <div class="item">
-        <h3>Video per gli eventi di VDC Entertainment</h3>
-        <p>Produzioni video realizzate come videomaker e direttore creativo.</p>
-        <ul class="links">
-          <li><a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/VDCEntertainment/videos/367857230783436">VDC Music Festival 2019</a></li>
-          <li><a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/VDCEntertainment/videos/250402505668786">VDC Music Festival 2018</a></li>
-          <li><a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/VDCEntertainment/videos/538512116635766">VDC Winter Edition</a></li>
-        </ul>
-      </div>
+  <nav class="nav" aria-label="Navigazione principale">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#inizio" aria-label="Torna all'inizio">SR.</a>
+      <ul class="nav-list">
+        <li><a href="#progetti">Progetti</a></li>
+        <li><a href="#altri-lavori">Altri lavori</a></li>
+        <li><a href="#esperienza">Esperienza</a></li>
+        <li><a href="#formazione">Competenze</a></li>
+        <li><a href="#contatti">Contatti</a></li>
+      </ul>
     </div>
-  </div>
-</section>
+  </nav>
 
-<section id="formazione" class="band">
-  <div class="wrap grid">
-    <h2>Formazione e competenze</h2>
-    <ul class="facts">
-      <li><b>Laurea in Comunicazione, Media e Pubblicità</b>, Università IULM, 2022</li>
-      <li><b>Diploma di Liceo Scientifico</b>, ISIS Edith Stein, 2018</li>
-      <li><b>Certificazioni:</b> EIPASS (European Computer Informatics Passport), corso di SEO Copywriting</li>
-      <li><b>Lingue:</b> italiano madrelingua, inglese B2, francese A2</li>
-    </ul>
-  </div>
-</section>
+  <main id="contenuto">
+    <section id="progetti" aria-labelledby="progetti-titolo">
+      <div class="wrap">
+        <div class="section-head">
+          <div><span class="eyebrow">Selezione di lavori</span><h2 id="progetti-titolo">Progetti in evidenza</h2></div>
+          <p class="section-note">Tre esempi del mio lavoro, con contesto, obiettivi e attività. Le copertine sono rappresentazioni editoriali: i contenuti originali sono consultabili dai link.</p>
+        </div>
+        <div class="project-list">
+          <article class="project">
+            <div class="project-preview preview-orange">
+              <!-- Puoi sostituire questo riquadro con uno screenshot originale del post, quando disponibile. -->
+              <div class="preview-card" aria-label="Copertina illustrativa del progetto LinkedIn aziendale">
+                <span class="preview-label">LinkedIn / Company Page</span>
+                <strong>Un progetto.<br>Una storia da raccontare.</strong>
+                <p class="preview-text">Comunicazione B2B: dalle caratteristiche del servizio ai benefici concreti per chi lo utilizza.</p>
+                <div class="preview-foot"><span class="preview-dot" aria-hidden="true"></span><span>Comark Italia · Contenuti aziendali</span></div>
+              </div>
+            </div>
+            <div class="project-body">
+              <span class="project-index">01 / Contenuti LinkedIn B2B</span>
+              <h3>Comunicazione aziendale per Comark Italia</h3>
+              <p class="meta">LinkedIn · Hospitality · Comunicazione di prodotto</p>
+              <p>Un esempio di contenuto dedicato a un progetto nel settore alberghiero: raccontare una soluzione concreta in modo comprensibile, senza perdere il valore tecnico della proposta.</p>
+              <dl class="details">
+                <div><dt>Obiettivo comunicativo</dt><dd>Trasformare un intervento e le sue caratteristiche in un racconto utile per clienti e partner.</dd></div>
+                <div><dt>Attività presentate</dt><dd>Copywriting e contenuto LinkedIn, con attenzione al tono di voce e alla chiarezza del messaggio.</dd></div>
+              </dl>
+              <div class="tag-row"><span class="tag">B2B</span><span class="tag">Copywriting</span><span class="tag">LinkedIn</span></div>
+              <div class="action-row"><a class="text-link" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/posts/comark-italia_comark-innovazione-sostenibilitaeq-activity-7090258736363020290-7Vzj/">Leggi il contenuto originale ↗</a></div>
+            </div>
+          </article>
 
-<section id="contatti" class="contact">
-  <div class="wrap grid">
-    <h2>Contatti</h2>
-    <div>
-      <p>Scrivimi per una collaborazione o per parlare di un progetto.</p>
-      <p class="reach"><a href="mailto:ronca.samuele@gmail.com">ronca.samuele@gmail.com</a><a href="tel:+393478183441">+39 347 818 3441</a></p>
-      <a target="_blank" rel="noopener noreferrer" class="in" href="https://www.linkedin.com/in/samueleronca/" aria-label="Profilo LinkedIn di Samuele Ronca"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0z"/></svg></a>
-    </div>
-  </div>
-</section>
+          <article class="project">
+            <div class="project-preview preview-lilac">
+              <div class="preview-card" aria-label="Copertina illustrativa di un progetto di personal branding LinkedIn">
+                <span class="preview-label">LinkedIn / Personal Branding</span>
+                <strong>Un punto di vista<br>che si riconosce.</strong>
+                <p class="preview-text">Logistica fieristica, assistenza al cliente e lettura delle sfide del settore.</p>
+                <div class="preview-foot"><span class="preview-dot" aria-hidden="true"></span><span>Andrea Bianchi · I-SPED</span></div>
+              </div>
+            </div>
+            <div class="project-body">
+              <span class="project-index">02 / Personal branding</span>
+              <h3>La voce professionale su LinkedIn</h3>
+              <p class="meta">Personal branding · Logistica fieristica</p>
+              <p>Due pubblicazioni che mostrano come affrontare temi di settore con una voce personale: dall'assistenza durante le fiere alle complessità doganali di un evento internazionale.</p>
+              <dl class="details">
+                <div><dt>Obiettivo comunicativo</dt><dd>Rendere riconoscibile il punto di vista del professionista e dare concretezza alla sua esperienza.</dd></div>
+                <div><dt>Attività presentate</dt><dd>Scrittura di contenuti LinkedIn orientati al personal branding, con linguaggio vicino al contesto professionale.</dd></div>
+              </dl>
+              <div class="tag-row"><span class="tag">Personal Branding</span><span class="tag">Tone of Voice</span><span class="tag">B2B</span></div>
+              <div class="action-row">
+                <a class="text-link" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/posts/andrea-bianchi-isped_logisticafieristica-fiere-assistenzaclienti-activity-7305512989053374468-B3gn">Assistenza e fiere ↗</a>
+                <a class="text-link" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/posts/andrea-bianchi-isped_logisticafieristica-beautyworld-istanbul-activity-7310586398602854415-2MUM">Beautyworld Istanbul ↗</a>
+              </div>
+            </div>
+          </article>
 
-<footer>
-  <div class="wrap">© Samuele Ronca. Tutti i diritti riservati.</div>
-</footer>
+          <article class="project">
+            <div class="project-preview preview-yellow">
+              <div class="preview-card" aria-label="Copertina illustrativa dei progetti social di FLUSSO Agenzia">
+                <span class="preview-label">Instagram / Content Creation</span>
+                <strong>Dalla strategia<br>al feed.</strong>
+                <p class="preview-text">Pianificazione, copy e contenuti video per brand con identità e pubblici differenti.</p>
+                <div class="preview-stack" aria-hidden="true">
+                  <div class="preview-mini">STADIUM FIT<br>↗</div>
+                  <div class="preview-mini">CAON ARMANDO<br>SPORT ↗</div>
+                </div>
+              </div>
+            </div>
+            <div class="project-body">
+              <span class="project-index">03 / Social media &amp; video</span>
+              <h3>Contenuti Instagram per FLUSSO</h3>
+              <p class="meta">Copy · Calendari editoriali · Video editing</p>
+              <p>Progetti social per clienti dell'agenzia FLUSSO, con attività di scrittura, pianificazione e montaggio, adattate al linguaggio e alle esigenze dei diversi brand.</p>
+              <dl class="details">
+                <div><dt>Obiettivo comunicativo</dt><dd>Creare contenuti coerenti con le identità dei brand, mantenendo una linea editoriale riconoscibile.</dd></div>
+                <div><dt>Il mio contributo</dt><dd>Copywriting, organizzazione dei contenuti, pianificazione editoriale e video editing.</dd></div>
+              </dl>
+              <div class="tag-row"><span class="tag">Instagram</span><span class="tag">Piano editoriale</span><span class="tag">Video</span></div>
+              <div class="action-row">
+                <a class="text-link" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/stadiumfit.it/">Stadium Fit ↗</a>
+                <a class="text-link" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/caonarmandosport/">Caon Armando Sport ↗</a>
+              </div>
+              <p class="project-footnote">I link rimandano ai profili: singoli contenuti o screenshot potranno essere aggiunti in un secondo momento.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<script>
-(function(){
-  var sel='.grid > h2, .item, .facts li, .contact .grid > div > *, footer .wrap';
-  var els=[].slice.call(document.querySelectorAll(sel));
-  var count=new Map();
-  els.forEach(function(el){
-    var i=count.get(el.parentNode)||0;
-    count.set(el.parentNode,i+1);
-    el.classList.add('reveal');
-    el.style.setProperty('--d',(Math.min(i,4)*0.09)+'s');
-  });
-  if(!('IntersectionObserver' in window)){els.forEach(function(el){el.classList.add('vis')});return;}
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}
-    });
-  },{threshold:0.15,rootMargin:'0px 0px -6% 0px'});
-  els.forEach(function(el){io.observe(el)});
-})();
-</script>
+    <section id="altri-lavori" aria-labelledby="altri-lavori-titolo" style="padding-top:25px">
+      <div class="wrap">
+        <div class="section-head"><div><span class="eyebrow">Video &amp; progetti personali</span><h2 id="altri-lavori-titolo">Altri lavori</h2></div></div>
+        <div class="more-grid">
+          <article class="more-card">
+            <span class="eyebrow">Podcast / Dal 2026</span>
+            <h3>NANDO – Podcast e contenuti social</h3>
+            <p>Progetto podcast per cui realizzo le grafiche e curo il montaggio degli episodi e dei contenuti brevi destinati a Instagram, TikTok e YouTube.</p>
+            <div class="tag-row"><span class="tag">Grafica</span><span class="tag">Video editing</span><span class="tag">Multicanale</span></div>
+            <div class="action-row">
+              <a class="text-link" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/nando_prjct">Instagram ↗</a>
+              <a class="text-link" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@Nan2do">YouTube ↗</a>
+              <a class="text-link" target="_blank" rel="noopener noreferrer" href="https://www.tiktok.com/@nandoprjct">TikTok ↗</a>
+              <a class="text-link" target="_blank" rel="noopener noreferrer" href="https://open.spotify.com/show/08qRjAbH0zU6c7P1O93Wxm">Spotify ↗</a>
+            </div>
+          </article>
+          <article class="more-card">
+            <span class="eyebrow">Videomaking / Eventi</span>
+            <h3>VDC Entertainment</h3>
+            <p>Esperienza in un'associazione culturale no profit che ho contribuito a fondare, lavorando su riprese, montaggio e concept visivi per gli eventi.</p>
+            <div class="tag-row"><span class="tag">Videomaking</span><span class="tag">Direzione creativa</span><span class="tag">Eventi</span></div>
+            <div class="action-row">
+              <a class="text-link" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/VDCEntertainment/videos/367857230783436">Festival 2019 ↗</a>
+              <a class="text-link" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/VDCEntertainment/videos/250402505668786">Festival 2018 ↗</a>
+              <a class="text-link" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/VDCEntertainment/videos/538512116635766">Winter Edition ↗</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="esperienza" class="band" aria-labelledby="esperienza-titolo">
+      <div class="wrap">
+        <div class="section-head"><div><span class="eyebrow">Il mio percorso</span><h2 id="esperienza-titolo">Esperienza</h2></div><p class="section-note">Dalla produzione creativa alla gestione di contenuti, clienti e progetti.</p></div>
+        <div class="experience-grid">
+          <article class="experience-card">
+            <p class="when">2025 – Oggi</p>
+            <h3>Copywriter &amp; Content Creator freelance</h3>
+            <p>Collaboro a progetti di comunicazione digitale, occupandomi di copy, calendari editoriali, contenuti visivi e video. Seguo direttamente brief, confronto con i clienti, revisioni e consegne.</p>
+            <p><a target="_blank" rel="noopener noreferrer" href="https://flussoagenzia.github.io/FLUSSO/">Scopri FLUSSO Agenzia ↗</a></p>
+          </article>
+          <article class="experience-card">
+            <p class="when">2022 – 2025</p>
+            <h3>Copywriter &amp; Content Creator · EXECUS S.p.A.</h3>
+            <p>Ho seguito attività editoriali per un portfolio di circa 40 clienti, con focus su LinkedIn e personal branding. Ho gestito calendari, confronto con i clienti, analisi dei KPI, reporting, attività di social selling e coordinamento con professionisti creativi.</p>
+          </article>
+          <article class="experience-card">
+            <p class="when">Esperienza associativa</p>
+            <h3>Videomaker &amp; direttore creativo · VDC</h3>
+            <p>Ho contribuito a fondare VDC Entertainment e alla realizzazione di produzioni audiovisive per eventi culturali, lavorando su riprese, montaggio e concept creativi.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="formazione" aria-labelledby="formazione-titolo">
+      <div class="wrap">
+        <div class="section-head"><div><span class="eyebrow">Le basi del mio lavoro</span><h2 id="formazione-titolo">Competenze e formazione</h2></div></div>
+        <div class="skill-layout">
+          <div class="info-panel">
+            <h3>Competenze</h3>
+            <div class="skills" aria-label="Competenze professionali">
+              <span class="tag">Copywriting</span><span class="tag">Content Strategy</span><span class="tag">Social Media</span><span class="tag">LinkedIn Marketing</span><span class="tag">Personal Branding</span><span class="tag">Social Selling</span><span class="tag">Calendari Editoriali</span><span class="tag">Analisi KPI</span><span class="tag">Reporting</span><span class="tag">Gestione Clienti</span><span class="tag">Video Editing</span>
+            </div>
+            <h3 style="margin-top:25px">Strumenti</h3>
+            <div class="skills" aria-label="Strumenti digitali">
+              <span class="tag">Canva</span><span class="tag">Adobe Premiere</span><span class="tag">CapCut</span><span class="tag">Microsoft Office</span>
+            </div>
+          </div>
+          <div class="info-panel">
+            <h3>Formazione</h3>
+            <dl class="facts-list">
+              <div><dt>Università IULM · 2022</dt><dd>Laurea triennale in Comunicazione, Media e Pubblicità (103/110).</dd></div>
+              <div><dt>ISIS Edith Stein · 2018</dt><dd>Diploma di Liceo Scientifico.</dd></div>
+              <div><dt>Formazione aggiuntiva</dt><dd>EIPASS e corso di SEO Copywriting.</dd></div>
+              <div><dt>Lingue</dt><dd>Italiano madrelingua · Inglese B2 · Francese A2.</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contatti" aria-labelledby="contatti-titolo">
+      <div class="wrap">
+        <div class="contact-band">
+          <div><span class="eyebrow">Restiamo in contatto</span><h2 id="contatti-titolo">C'è un progetto di cui parlare?</h2><p>Sono aperto a collaborazioni e opportunità professionali nell'ambito dei contenuti, dei social media e della comunicazione digitale.</p></div>
+          <div class="contact-list">
+            <a href="mailto:ronca.samuele@gmail.com">ronca.samuele@gmail.com ↗</a>
+            <a href="tel:+393478183441">+39 347 818 3441</a>
+            <a href="https://www.linkedin.com/in/samueleronca/" target="_blank" rel="noopener noreferrer">Profilo LinkedIn ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-top"><span>© <span id="anno">2026</span> Samuele Ronca. Tutti i diritti riservati.</span><a href="#inizio">Torna su ↑</a></div>
+  </footer>
+  <script>document.getElementById('anno').textContent=new Date().getFullYear();</script>
 </body>
 </html>
